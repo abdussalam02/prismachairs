@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #1b4053;
+  --white: #fdfff5;
+  --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/*Back to Top*/
+#btn-back-to-top {
+  position: fixed;
+  background-color: aliceblue;
+  color: var(--main-color);
+  border-radius: 15px;
+  border: none;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+
+/* Scroll Bar*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset var(--shadow); 
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color);
+}
+
+/* Carousal Home*/
+
+.car-img {
+  border-radius: 20px;
+  height: 500px;
+  width: 400px;
+}
+
+.home-text {
+  padding: 100px 0;
+  color: aliceblue;
+  text-align: center;
+}
+
+.main-text {
+  font-size: 64px;
+}
+
+.sub-text {
+  font-size: 50px;
+}
+
+
+.head-title {
+  font-size: 38px;
+  text-align: center; 
+  font-weight: bolder;
+}
+
+/* Products */
+.p-hover {
+  display: none;
+}
+.p-still {
+  cursor: pointer;
+}
+
+.p-still:hover + .p-hover {
+  transition: 0.3s ease-in-out;
+  display: block;
+  color: red;
+}
+
+/* Services */
+
+.boxers {
+  margin: 20px 20px;
+  padding: 20px 20px 10px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.boxers:hover {
+  background: linear-gradient(338deg, rgba(2,0,36,1) 0%, rgba(27,64,83,1) 27%, rgba(0,212,255,1) 100%);
+  color: aliceblue;
+  transition: 0.5s ease-in;
+}
+.counter { 
+	display: block;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28px;
+}
+
+.abt-text {
+  font-size: 28px;
+}
+
+/* Contact */
+
+.cnt-box {
+  border-color: 3px solid black;
+  box-shadow: var(--shadow);
+}
+  
+input {
+  width: 100%;
+  border: none;
+  border-bottom:1px solid #ccc;
+  outline: none;
+  padding-bottom: 5px;
+}
+  
+textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+  
+label {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  display: block;
+  color: var(--black);
+}
+  
+.cnt-btn {
+  margin-top: 10px;
+  padding: 10px;
+  background: linear-gradient(338deg, rgba(2,0,36,1) 0%, rgba(27,64,83,1) 27%, rgba(0,212,255,1) 100%);
+  border:none;
+  outline:none;
+  color:white;
+  border-radius: 10px;
+}
+
+.map-con {
+  border:0;
+  border-radius: 10px;
+  width: 400px;
+  height: 300px;
+  margin: 20px auto;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .cnt-box button {
+    margin-left: 50px;
+  }
+  .map-con{
+    width: max-content;
+  }
+  .boxers {
+    margin: 10px 10px;
+    padding: 10px 10px;
+  }
+  .main-text {
+    font-size: 44px;
+  }
+  .sub-text {
+    font-size: 36px;
+  }
+  .abt-text{
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cnt-box button {
+    margin-right: 180px;
+  }
+  .map-con {
+    width: max-content;
+  }
+  .boxers {
+    margin: 10px 10px;
+    padding: 10px 10px;
+  }
+}
+
+/* Footer */

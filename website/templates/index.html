@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+
+<div class="main-container py-3" style="background-color: aliceblue;">
+    <div class="container" style="  background: linear-gradient(338deg, rgba(2,0,36,1) 0%, rgba(27,64,83,1) 27%, rgba(0,212,255,1) 100%);
+    border-radius: 20px;">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12 my-3">
+              <div class="Slider">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="{{url_for('static', filename='img/chair-1.jpg')}}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{{url_for('static', filename='img/chair-1.jpg')}}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{{url_for('static', filename='img/chair-1.jpg')}}" class="d-block w-100" alt="...">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-8 col-sm-12 home-text">
+              <p class="main-text" >Comfortable Chairs</p>
+              <p class="sub-text" >@ Comfortable Prices</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Gallery -->
+<div class="container my-3">                  
+  <h2 class="my-4 head-title">Products</h2>  
+
+  <div class="row">
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+      <div class="p-still shadow rounded mb-4">
+        <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+        class="w-100 rounded"
+        alt="Boat on Calm Water"
+      />
+      </div>
+      <div class="p-hover mb-4">Boat on Calm Water</div>
+
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Wintry Mountain Landscape"
+      />
+    </div>
+
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Mountains in the Clouds"
+      />
+
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Boat on Calm Water"
+      />
+    </div>
+
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Waves at Sea"
+      />
+
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Yosemite National Park"
+      />
+    </div>
+  </div>
+</div>
+<!-- Gallery -->
+
+<!--Services-->
+<div class="container">
+  <h2 class="my-4 head-title">Services</h2>
+  <div class="row justify-content-center">
+    <div class="col-lg-3 col-sm-10 col-10 boxers">
+      <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
+      <h3 class="text-center">Something</h3>
+      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ut, adipisci rerum illo</p>
+    </div>
+    <div class="col-lg-4 col-sm-10 col-10 boxers">
+      <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
+      <h3 class="text-center">Something</h3>
+      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ut, adipisci rerum illo</p>
+    </div>
+    <div class="col-lg-3 col-sm-10 col-10 boxers">
+      <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
+      <h3 class="text-center">Something</h3>
+      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ut, adipisci rerum illo</p>
+    </div>
+    <div class="col-lg-3 col-sm-10 col-10 boxers">
+      <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
+      <h3 class="text-center">Something</h3>
+      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ut, adipisci rerum illo</p>
+    </div>
+    <div class="col-lg-4 col-sm-10 col-10 boxers">
+      <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
+      <h3 class="text-center">Something</h3>
+      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ut, adipisci rerum illo</p>
+    </div>
+    <div class="col-lg-3 col-sm-10 col-10 boxers">
+      <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
+      <h3 class="text-center">Something</h3>
+      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ut, adipisci rerum illo</p>
+    </div>
+    </div>
+  </div>
+</div>
+<!--Services-->
+
+<!--About-->
+<div class="container">
+  <h2 class="my-4 head-title">About</h2>
+  <div class="row justify-content-center align-items-center">
+    <div class="col-lg-5 col-sm-10 col-11 boxers">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aliquid natus aliquam ex quibusdam dolore recusandae quidem ad eligendi maxime et cum consectetur, voluptatem necessitatibus, voluptatibus deleniti eos nisi sint?</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa asperiores repellat molestiae reprehenderit exercitationem modi saepe sed quaerat dolore quidem explicabo id excepturi possimus sapiente optio, omnis odit expedita. Odit.</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis eos minus fuga voluptatem quas alias dolor enim! Ex nemo atque facilis praesentium consequatur iste nesciunt, officia quis provident, consequuntur placeat!</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus quos quo labore dicta eos provident laudantium unde molestias, modi vero reprehenderit ad, numquam possimus repellat pariatur nemo, animi aperiam necessitatibus.</p>
+    </div>
+    <div class="col-lg-6 col-sm-12 col-12">
+      <div class="row justify-content-center">
+        <div class="col-4 boxers">
+          <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
+          <span data-purecounter-start="0" data-purecounter-end="50" class="purecounter counter text-center mt-3" >0</span>
+          <h3 class="text-center abt-text">Something</h3>
+        </div>
+        <div class="col-4 boxers">
+          <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
+          <span data-purecounter-start="0" data-purecounter-end="85" class="purecounter counter text-center mt-3" >0</span>
+          <h3 class="text-center abt-text">Something</h3>
+        </div>
+        <div class="col-4 boxers">
+          <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
+          <span data-purecounter-start="0" data-purecounter-end="97" class="purecounter counter text-center mt-3" >0</span>
+          <h3 class="text-center abt-text">Something</h3>
+        </div>
+        <div class="col-4 boxers">
+          <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
+          <span data-purecounter-start="0" data-purecounter-end="99" class="purecounter counter text-center mt-3" >0</span>
+          <h3 class="text-center abt-text">Something</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!---Contact-->
+<div class="container">
+  <h2 class="my-4 head-title">Contact</h2>
+  <div class="row cnt-box">
+    <div class="col-lg-6 col-sm-12 p-5">
+      <form action="/action_page.php">
+        <div>
+          <label for="fname"> Full Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="John Smith">
+        </div>
+        
+        <div>
+          <label for="mobile">Phone Number</label>
+          <input type="tel" id="mobile" name="lastname" placeholder="7977 64 5823">
+        </div>
+
+        <div>
+          <label for="mail">Email</label>
+          <input type="email" id="mail" name="firstname" placeholder="johnsmith@gmail.com">
+        </div>
+
+        <div>
+          <label for="msg">Message</label>
+          <textarea rows = "5" cols = "40" id="msg" name = "description" placeholder="Enter your queries, message or anything here"></textarea>
+        </div>
+    
+        <input class="cnt-btn" type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="col-lg-6 col-sm-12 align-items-center p-5" style="  background: linear-gradient(338deg, rgba(2,0,36,1) 0%, rgba(27,64,83,1) 27%, rgba(0,212,255,1) 100%);
+    ">
+      <h3 class="text-light text-center">Reach us</h3>
+      <iframe class="map-con" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.202013962295!2d72.88738871421309!3d19.098791656220286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9990274eb5d%3A0xdf6e5277d707de59!2sPRISMA%20CHAIRS%20%26%20SERVICES%2F%20manufacturer%20of%20all%20types%20office%20chair%20%26%20furniture!5e0!3m2!1sen!2sin!4v1667630476683!5m2!1sen!2sin"
+       allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

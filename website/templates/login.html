@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+{% block body %}
+
+<h2 class="text-center my-4 head-title">Login</h2>
+<div class="container">
+    <div class="row d-flex justify-content-center align-items-center">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+                 {% if messages %}
+                 {% for category, message in messages %}
+                 
+                 {% if category == 'error' %}
+                 <div class="alert alert-dismissable alert-danger fade show" role="alert">
+                   {{ message }}
+                   <button type="button" class="close" data-bs-dismiss="alert">
+                     <span aria-hidden="true">&times;</span>
+                   </button>
+                 </div>
+                 {% else %}
+                 <div class="alert alert-dismissable alert-success fade show text-center" role="alert">
+                   {{ message }}
+                   <button type="button" class="close" data-bs-dismiss="alert">
+                     <span aria-hidden="true">&times;</span>
+                   </button>
+                 </div>
+                 {% endif %}
+             
+                 {% endfor %}
+                 {% endif %}
+                 {% endwith %}
+        <div class="col-lg-6">
+            <form action="{{url_for('auth.login')}}" method="POST" class="col-lg-10 col-sm-10 col-10 mx-auto d-block">
+                <div class="form-group">
+                    <label for="">Email:</label>
+                    <input type="email" class="form-control" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="">Pasword</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <br>
+                <input class="cnt-btn" type="submit" value="Login">
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <img src="{{url_for('static', filename='img/login.png')}}" class="col-lg-10 col-sm-10 col-10 mx-auto d-block" alt="" srcset="">
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

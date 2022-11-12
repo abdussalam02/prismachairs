@@ -7,7 +7,7 @@ import os
 
 views = Blueprint('views', __name__)
 
-UPLOAD_FOLDER = './website/static/chairs/'
+UPLOAD_FOLDER = 'website/static/chairs/'
 ALLOWED_FORMATS = ['.jpg', '.jpeg', '.png', '.webp']
 
 @views.route('/')
@@ -48,7 +48,8 @@ def insert():
             if b.lower() in ALLOWED_FORMATS:
                 filename = os.path.join(UPLOAD_FOLDER, secure_filename(file.filename))
                 file.save(filename)
-                db.session.add(Chairs(title=title, cover=filename[9:], sell_price=sp, disc_price=dp, description=desc))
+                print(filename[8:])
+                db.session.add(Chairs(title=title, cover=filename[8:], sell_price=sp, disc_price=dp, description=desc))
                 db.session.commit()
                 flash("Chair Added Successfully", category='success')
             else:
@@ -75,12 +76,12 @@ def update():
             filename = os.path.join(UPLOAD_FOLDER, secure_filename(file.filename))
             _ , b = os.path.splitext(filename)
             if b.lower() in ALLOWED_FORMATS:
-                if os.path.exists('./website' + data.cover):
-                    os.remove('./website' + data.cover)
+                if os.path.exists('website/' + data.cover):
+                    os.remove('website/' + data.cover)
                 file.save(filename)
                 flash("Image Updated Successfully", category='success')
 
-                data.cover = filename[9:]
+                data.cover = filename[8:]
                 db.session.commit()
                 flash("Chair Updated Successfully", category='success')
 
@@ -94,8 +95,8 @@ def update():
 @login_required
 def delete(sno):
     data = Chairs.query.get(sno)
-    if os.path.exists('./website' + data.cover):
-        os.remove('./website' + data.cover)
+    if os.path.exists('website/' + data.cover):
+        os.remove('website/' + data.cover)
     db.session.delete(data)
     db.session.commit()
     flash("Chair Deleted Successfully", category='success')

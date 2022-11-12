@@ -44,19 +44,19 @@
 
     {% block body %}
     {% endblock body %}
-    <footer class="text-center text-white mt-3" style="  background: linear-gradient(338deg, rgba(2,0,36,1) 0%, rgba(27,64,83,1) 27%, rgba(0,212,255,1) 100%);    ">
+    <footer class="text-white mt-3" style="  background: linear-gradient(338deg, rgba(2,0,36,1) 0%, rgba(27,64,83,1) 27%, rgba(0,212,255,1) 100%);    ">
       <!-- Grid container -->
       <div class="container pt-4">
         <!--Grid row-->
         <div class="row">
           <!--Grid column-->
-          <div class="col-lg-2 col-md-12 mb-4 mb-md-0 my-3">
+          <div class="text-center col-lg-2 col-md-12 mb-4 mb-md-0 my-3">
             <img src="{{url_for('static', filename='img/logo.png')}}" alt="" srcset="" height="100" width="100">
             <h5 class="text-uppercase">Prisma Chairs</h5>
           </div>
           <!--Grid column-->
           <!--Grid column-->
-          <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <div class="text-center col-lg-4 col-md-12 mb-4 mb-md-0">
             <h5 class="text-uppercase">Company</h5>
     
             <p class="px-2" style="text-align: justify;">
@@ -69,30 +69,37 @@
     
           <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-    
+            <h5 class="text-center text-uppercase">Links</h5>
+            <div class="d-flex justify-content-center">
             <ul class="list-unstyled mb-0">
               <li>
-                <a href="#!" class="text-left text-white">Home</a>
+                <a href="{{url_for('views.home')}}" class="text-white">Home</a>
               </li>
               <li>
-                <a href="#!" class="text-left text-white">Products</a>
+                <a href="#!" class="text-white">Products</a>
               </li>
               <li>
-                <a href="#!" class="text-left text-white">Services</a>
+                <a href="#!" class="text-white">Services</a>
               </li>
               <li>
-                <a href="#!" class="text-left text-white">Contact</a>
+                <a href="#!" class="text-white">Contact</a>
+              </li>
+              <li>
+                <a href="{{url_for('auth.login')}}" class="text-white">Login</a>
+              </li>
+              <li>
+                <a href="{{url_for('auth.register')}}" class="text-white">Register</a>
               </li>
             </ul>
+          </div>
           </div>
           <!--Grid column-->
     
           <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Contact US</h5>
-            <div>
-              <ul class="list-unstyled mb-0">
+            <h5 class="text-center text-uppercase">Contact US</h5>
+            <div class="d-flex justify-content-center">
+              <ul class="list-unstyled">
                 <li>
                   <i class="fa-solid fa-location-dot"></i>
                   <a href="https://goo.gl/maps/x9taxN84syKbJoee7" class="text-white">Gala 30, Lokmany Tilak Nagar, Mumbai, MH - 400072</a>
@@ -111,12 +118,13 @@
                 </li>
               </ul>
             </div>
+            </div>
           </div>
           <!--Grid column-->
         </div>
         <!--Grid row-->
             <!-- Section: Social media -->
-    <section class="mb-4">
+    <section class="text-center my-4">
       <!-- Facebook -->
       <a
         class="btn text-white btn-floating m-1"

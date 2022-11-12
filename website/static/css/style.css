@@ -92,7 +92,7 @@
 
 .boxers {
   margin: 20px 20px;
-  padding: 20px 20px 10px;
+  padding: 20px 15px 10px 15px;
   border-radius: 10px;
   box-shadow: var(--shadow);
 }
@@ -171,7 +171,7 @@ label {
   }
   .boxers {
     margin: 10px 10px;
-    padding: 10px 10px;
+    padding: 15px 10px 10px 10px;
   }
   .main-text {
     font-size: 44px;
@@ -193,7 +193,7 @@ label {
   }
   .boxers {
     margin: 10px 10px;
-    padding: 10px 10px;
+    padding: 20px 15px 10px 15px;
   }
 }
 

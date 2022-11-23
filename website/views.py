@@ -1,7 +1,7 @@
 from flask import Blueprint, redirect, render_template, request, flash, url_for
 from flask_login import login_required, current_user
 from werkzeug.utils import secure_filename
-from .models import Chairs
+from .models import Chairs, Contact
 from . import db
 import os
 
@@ -12,7 +12,37 @@ ALLOWED_FORMATS = ['.jpg', '.jpeg', '.png', '.webp']
 
 @views.route('/')
 def home():
-    return render_template('index.html')
+    data = Chairs.query.all()
+    return render_template('index.html', chairs = data)
+
+@views.route('/message', methods=['POST'])
+def message():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        phone = request.form.get('phone')
+        email = request.form.get('email')
+        message = request.form.get('message')
+
+        db.session.add(Contact(name=name, phone=phone, email=email, message=message))
+        db.session.commit()
+        flash("We have received your message we will get back to you really soon.", category='success')
+    return redirect(url_for('views.home'))
+
+
+@views.route('/msgview', methods=['GET', 'POST'])
+def msgview():
+    data = Contact.query.all()
+    return render_template('contact.html', msgdata=data, user=current_user)
+
+@views.route('/delmsg/<id>/', methods=['GET', 'POST'])
+@login_required
+def delmsg(id):
+    data = Contact.query.get(id=id)
+    db.session.delete(data)
+    db.session.commit()
+    flash("Message Deleted Successfully", category='success')
+    return redirect(url_for('views.admin'))
+
 
 @views.route('/chair')
 def chair():
@@ -36,8 +66,6 @@ def insert():
             return redirect(request.url)
 
         file = request.files['cover']
-        sp = request.form.get('sell')
-        dp = request.form.get('discount')
         desc = request.form.get('description')
         
         if file.filename == '':
@@ -48,8 +76,7 @@ def insert():
             if b.lower() in ALLOWED_FORMATS:
                 filename = os.path.join(UPLOAD_FOLDER, secure_filename(file.filename))
                 file.save(filename)
-                print(filename[8:])
-                db.session.add(Chairs(title=title, cover=filename[8:], sell_price=sp, disc_price=dp, description=desc))
+                db.session.add(Chairs(title=title, cover=filename[8:], description=desc))
                 db.session.commit()
                 flash("Chair Added Successfully", category='success')
             else:
@@ -63,8 +90,6 @@ def update():
     if request.method == 'POST':
         data = Chairs.query.get(request.form.get('sno'))
         data.title = request.form.get('title')
-        data.sell_price = request.form.get('sell')
-        data.disc_price = request.form.get('discount')
         data.description = request.form.get('description')
         file = request.files['cover']
 
@@ -80,7 +105,6 @@ def update():
                     os.remove('website/' + data.cover)
                 file.save(filename)
                 flash("Image Updated Successfully", category='success')
-
                 data.cover = filename[8:]
                 db.session.commit()
                 flash("Chair Updated Successfully", category='success')

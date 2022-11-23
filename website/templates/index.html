@@ -14,10 +14,10 @@
                       <img src="{{url_for('static', filename='img/chair-1.jpg')}}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{url_for('static', filename='img/chair-1.jpg')}}" class="d-block w-100" alt="...">
+                      <img src="{{url_for('static', filename='img/chair-2.jpg')}}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{url_for('static', filename='img/chair-1.jpg')}}" class="d-block w-100" alt="...">
+                      <img src="{{url_for('static', filename='img/chair-3.jpg')}}" class="d-block w-100" alt="...">
                     </div>
                   </div>
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -35,99 +35,80 @@
             </div>
             
             <div class="col-lg-8 col-sm-12 home-text">
-              <p class="main-text" >Comfortable Chairs</p>
-              <p class="sub-text" >@ Comfortable Prices</p>
+              <p class="main-text" >Best Quality</p>
+              <p class="sub-text" >Best Comfort</p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Gallery -->
-<div class="container my-3">                  
+<!-- Products -->
+<div class="container my-3" id="products">                  
   <h2 class="my-4 head-title">Products</h2>  
 
-  <div class="row">
-    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-      <div class="p-still shadow rounded mb-4">
-        <img
-        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-        class="w-100 rounded"
-        alt="Boat on Calm Water"
-      />
-      </div>
-      <div class="p-hover mb-4">Boat on Calm Water</div>
-
-      <img
-        src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Wintry Mountain Landscape"
-      />
+  <div class="row justify-content-center">
+    {% if chairs %}
+    {% for chair in chairs %}
+    <div class="col-lg-3 col-sm-10 col-10 rounded shadow px-0 my-2 mx-4 prods" >
+      <a href="" class="text-decoration-none">
+        <img src="{{chair.cover}}" class="img-fluid rounded" alt="">
+        <div class="m-3" style="background-color: white;">
+          <h4 class="text-center pb-0 mb-0" style="color: darkblue;">{{chair.title}}</h4>
+          <hr>
+        </div>
+        <div class="d-flex m-3 justify-content-center">
+          <div class="col-6">
+            <a href="" class="text-decoration-none">
+            <button type="button" class="btn btn-primary mx-auto d-block" >View</button>
+          </a>
+          </div>
+          <div class="col-6">
+            <a href="#contact" class="text-decoration-none">
+              <button type="button" class="btn btn-info mx-auto d-block" >Enquire</button>
+          </a>
+          </div>
+        </div>
+      </a>
     </div>
-
-    <div class="col-lg-4 mb-4 mb-lg-0">
-      <img
-        src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Mountains in the Clouds"
-      />
-
-      <img
-        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Boat on Calm Water"
-      />
-    </div>
-
-    <div class="col-lg-4 mb-4 mb-lg-0">
-      <img
-        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Waves at Sea"
-      />
-
-      <img
-        src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Yosemite National Park"
-      />
-    </div>
+    {% endfor %}
+    {% endif %}
   </div>
 </div>
 <!-- Gallery -->
 
 <!--Services-->
-<div class="container">
+<div class="container" id="services">
   <h2 class="my-4 head-title">Services</h2>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center" style="text-align: justify;">
     <div class="col-lg-3 col-sm-10 col-10 boxers">
-      <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
-      <h3 class="text-center">Something</h3>
-      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ut, adipisci rerum illo</p>
+      <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px; color: darkblue;"></i></div>
+      <h3 class="text-center mt-2" >Repairing</h3>
+      <p>Our offered Office Chair Repairing Service is highly accredited by clients for its cost effectiveness, promptness and flexibility.</p>
     </div>
     <div class="col-lg-4 col-sm-10 col-10 boxers">
-      <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
-      <h3 class="text-center">Something</h3>
-      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ut, adipisci rerum illo</p>
+      <div class="text-center"><i class="fa-solid fa-file-contract" style="font-size: 42px; color: darkblue;"></i></div>
+      <h3 class="text-center mt-2" >Annual Maintenance Contract (AMC)</h3>
+      <p>We are engaged in providing AMC for small and large corporates, We offers comprehensive & non-comprehensive that are competitively priced.</p>
     </div>
     <div class="col-lg-3 col-sm-10 col-10 boxers">
-      <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
-      <h3 class="text-center">Something</h3>
-      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ut, adipisci rerum illo</p>
+      <div class="text-center"><i class="fa-solid fa-hands-bubbles" style="font-size: 42px; color: darkblue;"></i></div>
+      <h3 class="text-center mt-2" >Shampooing</h3>
+      <p>We perform step by step process to shampoo your chair in a way to make it look new again.</p>
     </div>
     <div class="col-lg-3 col-sm-10 col-10 boxers">
-      <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
-      <h3 class="text-center">Something</h3>
-      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ut, adipisci rerum illo</p>
+      <div class="text-center"><i class="fa-solid fa-leaf" style="font-size: 42px; color: darkblue;"></i></div>
+      <h3 class="text-center mt-2" >Fabric Change</h3>
+      <p>You can get your broken fabric chair repaired by us with new and much better one. </p>
     </div>
     <div class="col-lg-4 col-sm-10 col-10 boxers">
-      <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
-      <h3 class="text-center">Something</h3>
-      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ut, adipisci rerum illo</p>
+      <div class="text-center"><i class="fa-solid fa-percent" style="font-size: 42px; color: darkblue;"></i></div>
+      <h3 class="text-center mt-2" >Rate Contract (RC)</h3>
+      <p>We offer Rate contract in which an agreement between our clients and us to supply items for a fixed unit price for a specified period of time.</p>
     </div>
     <div class="col-lg-3 col-sm-10 col-10 boxers">
-      <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
-      <h3 class="text-center">Something</h3>
-      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ut, adipisci rerum illo</p>
+      <div class="text-center"><i class="fa-solid fa-couch" style="font-size: 42px; color: darkblue;"></i></div>
+      <h3 class="text-center mt-2" >Furniture</h3>
+      <p>We also provide office furniture like drawer, table, cupboards, locker and much more..</p>
     </div>
     </div>
   </div>
@@ -135,36 +116,35 @@
 <!--Services-->
 
 <!--About-->
-<div class="container">
+<div class="container" id="about-us">
   <h2 class="my-4 head-title">About</h2>
   <div class="row justify-content-center align-items-center">
-    <div class="col-lg-5 col-sm-10 col-11 boxers">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aliquid natus aliquam ex quibusdam dolore recusandae quidem ad eligendi maxime et cum consectetur, voluptatem necessitatibus, voluptatibus deleniti eos nisi sint?</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa asperiores repellat molestiae reprehenderit exercitationem modi saepe sed quaerat dolore quidem explicabo id excepturi possimus sapiente optio, omnis odit expedita. Odit.</p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis eos minus fuga voluptatem quas alias dolor enim! Ex nemo atque facilis praesentium consequatur iste nesciunt, officia quis provident, consequuntur placeat!</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus quos quo labore dicta eos provident laudantium unde molestias, modi vero reprehenderit ad, numquam possimus repellat pariatur nemo, animi aperiam necessitatibus.</p>
+    <div class="col-lg-5 col-sm-10 col-11 boxers" style="text-align: justify;">
+      <p>We introduces office furniture, chairs and sofa the perfect and complete solution for all your office needs. The ergonomic created furniture meets the most demanding requirements thus combining luxury with functionality.</p>
+      <p>A great deal is demand of modern office furniture. It must not only meet ergonomic and functional requirements but also provide ergonomic and aesthetically pleasing designs.</p>
+      <p>We are dedicated itself to the problem of revolutionizing the way man sits. Face-to-face, ear to ear, we have gathered customer reactions about our furniture in order to create a continuous cycle of improvements, more feedback and even more improvements. This passion for customer intimacy, this tremendous idea-fusion has brought to a life stunning range of furniture based on individualism innovation and information.</p>
+      <p>Apart from manufacturer and whole seller of the chairs, sofa and furniture, we also undertake film pesting maintenance, sofa cleaning and washing, carpet cleaning and pasting, chair cleaning, washing, repairing, vertical blinds & vinising blinds cleaning, repairing and suppliers and supply chair cloths at your ease.</p>
     </div>
     <div class="col-lg-6 col-sm-12 col-12">
       <div class="row justify-content-center">
         <div class="col-4 boxers">
-          <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
-          <span data-purecounter-start="0" data-purecounter-end="50" class="purecounter counter text-center mt-3" >0</span>
-          <h3 class="text-center abt-text">Something</h3>
+          <div class="text-center"><i class="fa-solid fa-briefcase" style="font-size: 42px; color: darkblue;"></i></div>
+          <span data-purecounter-start="0" data-purecounter-end="15" class="purecounter counter text-center mt-3" >0</span>
+          <h3 class="text-center abt-text">Experience</h3>
         </div>
         <div class="col-4 boxers">
-          <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
-          <span data-purecounter-start="0" data-purecounter-end="85" class="purecounter counter text-center mt-3" >0</span>
-          <h3 class="text-center abt-text">Something</h3>
+          <div class="text-center"><i class="fa-solid fa-building" style="font-size: 42px; color: darkblue;"></i></div>
+          <span data-purecounter-start="0" data-purecounter-end="4" class="purecounter counter text-center mt-3" >0</span>
+          <h3 class="text-center abt-text">Franchise</h3>
         </div>
         <div class="col-4 boxers">
-          <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
-          <span data-purecounter-start="0" data-purecounter-end="97" class="purecounter counter text-center mt-3" >0</span>
-          <h3 class="text-center abt-text">Something</h3>
+          <div class="text-center"><i class="fa-solid fa-certificate" style="font-size: 42px; color: darkblue;"></i></div>
+          <span data-purecounter-start="0" data-purecounter-end="7" class="purecounter counter text-center mt-3" >0</span>
+          <h3 class="text-center abt-text">Cerificates</h3>
         </div>
         <div class="col-4 boxers">
-          <div class="text-center"><i class="fa-sharp fa-solid fa-screwdriver-wrench" style="font-size: 42px;"></i></div>
-          <span data-purecounter-start="0" data-purecounter-end="99" class="purecounter counter text-center mt-3" >0</span>
-          <h3 class="text-center abt-text">Something</h3>
+          <div class="text-center"><i class="fa-solid fa-globe" style="font-size: 42px; color: darkblue;"></i></div>
+          <h3 class="text-center abt-text mt-4">PAN India</h3>
         </div>
       </div>
 
@@ -173,24 +153,24 @@
 </div>
 
 <!---Contact-->
-<div class="container">
+<div class="container" id="contact">
   <h2 class="my-4 head-title">Contact</h2>
   <div class="row cnt-box">
     <div class="col-lg-6 col-sm-12 p-5">
-      <form action="/action_page.php">
+      <form action="{{url_for('views.message')}}" method="post">
         <div>
           <label for="fname"> Full Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="John Smith">
+          <input type="text" id="fname" name="firstname" placeholder="Jahir Ali">
         </div>
         
         <div>
           <label for="mobile">Phone Number</label>
-          <input type="tel" id="mobile" name="lastname" placeholder="7977 64 5823">
+          <input type="tel" id="mobile" name="lastname" placeholder="8177997977">
         </div>
 
         <div>
           <label for="mail">Email</label>
-          <input type="email" id="mail" name="firstname" placeholder="johnsmith@gmail.com">
+          <input type="email" id="mail" name="firstname" placeholder="prismachairs@gmail.com">
         </div>
 
         <div>

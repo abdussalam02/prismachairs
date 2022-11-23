@@ -29,7 +29,7 @@ def register():
             user = User(name=name, email=email, phone=phone, password=generate_password_hash(password, method='sha256'))
             db.session.add(user)
             db.session.commit()
-            flash("Account created successfully", category='success')
+            flash("Account created successfully, Wait for verifications", category='success')
 
     return render_template('register.html')
 

@@ -45,6 +45,12 @@
   background: var(--main-color);
 }
 
+/*Navbar*/
+#navbarNavAltMarkup a{
+  color: darkblue;
+}
+
+
 /* Carousal Home*/
 
 .car-img {
@@ -75,18 +81,6 @@
 }
 
 /* Products */
-.p-hover {
-  display: none;
-}
-.p-still {
-  cursor: pointer;
-}
-
-.p-still:hover + .p-hover {
-  transition: 0.3s ease-in-out;
-  display: block;
-  color: red;
-}
 
 /* Services */
 
@@ -116,6 +110,7 @@
 /* Contact */
 
 .cnt-box {
+  background-color: white;
   border-color: 3px solid black;
   box-shadow: var(--shadow);
 }

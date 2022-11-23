@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Messages{% endblock title %}
+{% block body %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}   
+            {% if category == 'error' %}
+                <div class="alert alert-dismissable alert-danger fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="close" data-bs-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+            {% else %}
+                <div class="alert alert-dismissable alert-success fade show text-center" role="alert">
+                  {{ message }}
+                  <button type="button" class="close" data-bs-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+            {% endif %}  
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    {% for msg in msgdata %}
+    <tr class="table-light">
+        <td>{{msg.id}}</td>
+        <td>{{msg.name}}</td>
+        <td>{{msg.phone}}</td>
+        <td>{{msg.email}}</td>
+        <td>{{msg.message}}</td>
+        <td>
+            <a href="/delmsg/{{msg.id}}" class="btn btn-danger px-3 m-1" onclick="return confirm('Are you sure to delete..?')">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock body %}

@@ -155,27 +155,49 @@
 <!---Contact-->
 <div class="container" id="contact">
   <h2 class="my-4 head-title">Contact</h2>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  {% for category, message in messages %}
+  
+  {% if category == 'error' %}
+  <div class="alert alert-dismissable alert-danger fade show" role="alert">
+    {{ message }}
+    <button type="button" class="close" data-bs-dismiss="alert">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% else %}
+  <div class="alert alert-dismissable alert-success fade show text-center" role="alert">
+    {{ message }}
+    <button type="button" class="close" data-bs-dismiss="alert">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
   <div class="row cnt-box">
     <div class="col-lg-6 col-sm-12 p-5">
       <form action="{{url_for('views.message')}}" method="post">
         <div>
           <label for="fname"> Full Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="Jahir Ali">
+          <input type="text" id="fname" name="name" placeholder="Jahir Ali" required="1">
         </div>
         
         <div>
           <label for="mobile">Phone Number</label>
-          <input type="tel" id="mobile" name="lastname" placeholder="8177997977">
+          <input type="tel" id="mobile" name="phone" placeholder="8177997977" required="1">
         </div>
 
         <div>
           <label for="mail">Email</label>
-          <input type="email" id="mail" name="firstname" placeholder="prismachairs@gmail.com">
+          <input type="email" id="mail" name="email" placeholder="prismachairs@gmail.com" required="1">
         </div>
 
         <div>
           <label for="msg">Message</label>
-          <textarea rows = "5" cols = "40" id="msg" name = "description" placeholder="Enter your queries, message or anything here"></textarea>
+          <textarea rows = "5" cols = "40" id="msg" name="message" placeholder="Enter your queries, message or anything here" required="1"></textarea>
         </div>
     
         <input class="cnt-btn" type="submit" value="Submit">

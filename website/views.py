@@ -23,7 +23,7 @@ def message():
         email = request.form.get('email')
         message = request.form.get('message')
 
-        db.session.add(Contact(name=name, phone=phone, email=email, message=message))
+        db.session.add(Contact(name=name, number=phone, email=email, message=message))
         db.session.commit()
         flash("We have received your message we will get back to you really soon.", category='success')
     return redirect(url_for('views.home'))
@@ -37,11 +37,11 @@ def msgview():
 @views.route('/delmsg/<id>/', methods=['GET', 'POST'])
 @login_required
 def delmsg(id):
-    data = Contact.query.get(id=id)
+    data = Contact.query.get(id)
     db.session.delete(data)
     db.session.commit()
     flash("Message Deleted Successfully", category='success')
-    return redirect(url_for('views.admin'))
+    return redirect(url_for('views.msgview'))
 
 
 @views.route('/chair')

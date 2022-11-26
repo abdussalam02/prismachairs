@@ -50,15 +50,17 @@
     {% if chairs %}
     {% for chair in chairs %}
     <div class="col-lg-3 col-sm-10 col-10 rounded shadow px-0 my-2 mx-4 prods" >
-      <a href="" class="text-decoration-none">
-        <img src="{{chair.cover}}" class="img-fluid rounded" alt="">
+      <a href="" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#modalview{{chair.sno}}">
+        <div class="img-hover-zoom">
+          <img src="{{chair.cover}}" class="img-fluid rounded" alt="">
+        </div>
         <div class="m-3" style="background-color: white;">
           <h4 class="text-center pb-0 mb-0" style="color: darkblue;">{{chair.title}}</h4>
           <hr>
         </div>
         <div class="d-flex m-3 justify-content-center">
           <div class="col-6">
-            <a href="" class="text-decoration-none">
+            <a href="" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#modalview{{chair.sno}}">
             <button type="button" class="btn btn-primary mx-auto d-block" >View</button>
           </a>
           </div>
@@ -70,8 +72,53 @@
         </div>
       </a>
     </div>
-    {% endfor %}
-    {% endif %}
+
+    <div id="modalview{{chair.sno}}" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h4 class="modal-title">{{chair.title}}</h4>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-6">
+                    <a href="" data-bs-toggle="modal" data-bs-target="#modalviewimg{{chair.sno}}">
+                      <div class="img-hover-zoom">
+                        <img src="{{chair.cover}}" alt="{{chair.cover}}" class="img-fluid">
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-6">
+                    <h5>Description:</h5>
+                    <hr>
+                    <p class="text-justify">{{chair.description}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Modal Image -->
+  <div id="modalviewimg{{chair.sno}}" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="click-zoom">
+          <label>
+            <input type="checkbox">
+            <img src="{{chair.cover}}" class="img-fluid" alt="{{chair.cover}}">
+          </label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  {% endif %}
   </div>
 </div>
 <!-- Gallery -->
